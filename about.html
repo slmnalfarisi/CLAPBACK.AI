@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CLAPBACK.AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0D0D0D;
+            color: #fff;
+            line-height: 1.6;
+            padding-top: 80px;
+            text-align: center;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo span {
+            color: #00ffff;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00ffff;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+
+        .hero {
+            padding: 120px 20px 40px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
+            opacity: 0.8;
+        }
+
+        .team-section {
+            padding: 60px 20px;
+        }
+
+        .team-section h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .team-section p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .team-card {
+            background: #1A1A1A;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .team-card:hover {
+            transform: scale(1.05);
+            background: #252525;
+        }
+
+        .team-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">CLAPBACK<span>.AI</span></div>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="article.html">Article</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Meet Our Team</h1>
+        <p>We are a team of passionate innovators, problem-solvers, and tech enthusiasts dedicated to pushing the boundaries of artificial intelligence. With diverse backgrounds in technology, design, and strategy, we collaborate to create AI-driven solutions that empower and inspire. Every idea we develop is built with precision, creativity, and a deep commitment to excellence.</p>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h2>Our Team</h2>
+        <p>Each member brings a unique perspective and specialized expertise, ensuring that every project we undertake is backed by innovation, efficiency, and impact. By combining our strengths, we transform challenges into opportunities and redefine the possibilities of AI-driven technology.</p>
+
+        <div class="team-container">
+            <div class="team-card">
+                <img src="ANGEL.jpg" alt="Angel">
+                <h3>Angel</h3>
+                <p>SMA TARAKANITA 2 Jakarta</p>
+            </div>
+            <div class="team-card">
+                <img src="SALMON.jpg" alt="Salman">
+                <h3>Salman</h3>
+                <p>SMKN 46 JAKARTA</p>
+            </div>
+            <div class="team-card">
+                <img src="FLAZEA.jpg" alt="Flazea">
+                <h3>Flazea</h3>
+                <p>SMAN 70 JAKARTA</p>
+            </div>
+            <div class="team-card">
+                <img src="FILZAH.jpg" alt="Filzah">
+                <h3>Filzah</h3>
+                <p>SMAN 38 JAKARTA</p>
+            </div>
+            <div class="team-card">
+                <img src="DARWISH.jpg" alt="Darwish">
+                <h3>Darwish</h3>
+                <p>Institute of Technical Education</p>
+            </div>
+            <div class="team-card">
+                <img src="ZAHIRA.jpg" alt="Zafira">
+                <h3>Zahirah</h3>
+                <p>Institute of Technical Education</p>
+            </div>
+            <div class="team-card">
+                <img src="SUBHAN.jpg" alt="Subhan">
+                <h3>Subhan</h3>
+                <p>SMAN 3 JAKARTA</p>
+            </div>
+            <div class="team-card">
+                <img src="download.png" alt="gpt">
+                <h3>Bang GPT</h3>
+                <p>--</p>
+            </div>
+            <div class="team-card">
+                <img src="th.jpg" alt="blackbox">
+                <h3>Bang Blackbox</h3>
+                <p>--</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

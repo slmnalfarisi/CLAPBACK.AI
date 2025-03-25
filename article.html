@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles - CLAPBACK.AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: url('background.png') no-repeat center center/cover;
+      color: #fff;
+      line-height: 1.6;
+      padding-top: 100px;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo span {
+      color: #00ffff;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2em;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00ffff;
+    }
+
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+    }
+
+    .btn-blue {
+      background-color: #00ffff;
+      color: black;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .btn-blue:hover {
+      background-color: #008b8b;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .intro {
+      margin-bottom: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .article-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid #ffffff33;
+      min-height: 200px;
+      transition: box-shadow 0.3s ease;
+      overflow: hidden;
+      margin: 20px 0; /* Added margin for spacing */
+    }
+
+    .article-box h2 {
+      margin: 20px 0; /* Added margin for spacing */
+    }
+
+    .article-box p {
+      margin: 15px 0; /* Added margin for spacing */
+    }
+
+    /* New image styling */
+    .article-box img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-buttons {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+      <div class="logo">CLAPBACK<span>.AI</span></div>
+      <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+      <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="article.html">Article</a></li>
+          <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-buttons">
+          <a href="login.html" class="btn-blue">Login</a>
+      </div>
+  </nav>
+
+  <script>
+      function toggleMenu() {
+          document.querySelector(".nav-links").classList.toggle("active");
+      }
+  </script>
+
+  <div class="container">
+    <!-- Intro Section -->
+    <div class="intro">
+      <h2>💡 Why Did We Create CLAPBACK.AI?</h2>
+      <p>In a world full of vague messages, unspoken feelings, and communication struggles, we created CLAPBACK.AI to help you deliver clear, confident, and guilt-free responses.</p>
+      <h3>🎭 What is CLAPBACK?</h3>
+      <p>CLAPBACK isn’t just another text rewriter—it’s an emotionally evolved messaging machine designed to help you say "no" without the drama, craft professional yet human responses, and even add a touch of humor when needed.</p>
+      <h3>🔍 How does it work?</h3>
+      <ul>
+        <li>Choose your language 🌍 (Supports 7 major languages!)</li>
+        <li>Write your raw thoughts 📝 (No filters, we won’t judge!)</li>
+        <li>Select your communication style 🎭 (CEO? Comedian? Shakespeare? You decide!)</li>
+        <li>Avoid red flags 🚨 (We’ll help you filter out problematic wording)</li>
+        <li>Adjust your tone 🔥 (From soft and polite to savage but classy!)</li>
+        <li>Get the perfect response ✨ (Ready to send, no regrets!)</li>
+      </ul>
+      <p>💡 Because sometimes, all you need are the right words to say "no"—without the guilt.</p>
+    </div>
+
+    <h1>News & Articles</h1>
+    <div class="articles">
+      <div class="article-box">
+        <h2>AI CLAPBACK and Cyberbullying</h2>
+        <p>Bagaimana AI CLAPBACK dapat mendeteksi dan merespons komentar negatif di media sosial.</p>
+        <p><strong>Artikel:</strong> "Effectiveness of Artificial Intelligence–Based Cyberbullying Detection and Prevention: Children’s and Youth’s Perspectives" - Sage Journals</p>
+        <p><img src="gambar 1.webp" alt="Chatbot AI merespons komentar kasar" /></p>
+      </div>
+      <div class="article-box">
+        <h2>AI CLAPBACK for Healthy Online Discussions</h2>
+        <p>Cara AI ini membantu menjaga diskusi tetap santun dengan mendeteksi ujaran kebencian dan memberikan respons yang membangun.</p>
+        <p><strong>Artikel:</strong> "Researchers leverage AI to fight online hate speech" - cse.engin.umich.edu</p>
+        <p><img src="gambar 2.webp" alt="Chat AI menenangkan debat panas" /></p>
+      </div>
+      <div class="article-box">
+        <h2>Mencegah Penyebaran Hoaks dengan AI</h2>
+        <p>AI dapat mengidentifikasi berita palsu dan memberikan klarifikasi berbasis fakta.</p>
+        <p><strong>Artikel:</strong> "When a Story is Breaking, AI Can Help Consumers Identify Fake News" - news.rpi.edu</p>
+        <p><img src="gambar 3.webp" alt="Chat AI menunjukkan verifikasi berita" /></p>
+      </div>
+      <div class="article-box">
+        <h2>AI CLAPBACK untuk Meningkatkan Empati Online</h2>
+        <p>Bagaimana AI ini dapat memberikan respons berbasis empati agar komunikasi online lebih positif.</p>
+        <p><strong>Artikel:</strong> "Third-party evaluators perceive AI as more compassionate than humans" - Nature</p>
+        <p><img src="gambar 4.webp" alt="AI membantu seseorang merespons komentar" /></p>
+      </div>
+      <div class="article-box">
+        <h2>Melindungi Remaja dari Ujaran Kebencian</h2>
+        <p>AI membantu moderasi konten agar lingkungan digital lebih aman bagi anak-anak dan remaja.</p>
+        <p><strong>Artikel:</strong> "Session-based cyberbullying detection in social media: A survey" - ScienceDirect</p>
+        <p><img src="gambar 5.webp" alt="AI menjaga forum komunitas" /></p>
+      </div>
+      <div class="article-box">
+        <h2>AI CLAPBACK untuk Brand yang Hadapi Kritik</h2>
+        <p>Bagaimana AI ini membantu bisnis merespons kritik pelanggan dengan lebih sopan dan profesional.</p>
+        <p><strong>Artikel:</strong> "Responding effectively to negative reviews with AI solutions" - solike.review</p>
+        <p><img src="gambar 6.webp" alt="Chatbot AI memberikan respons" /></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 CLAPBACK.AI - All Rights Reserved.
+  </footer>
+
+</body>
+</html>

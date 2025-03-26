@@ -232,6 +232,68 @@
             margin: 10px 0;
             padding-left: 20px;
         }
+
+        /* Spice Level Slider */
+        .spice-level {
+            margin: 20px 0;
+        }
+
+        .spice-level label {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #00ffff;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        .slider-value {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Float Animation */
+        .float {
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0; /* Start with opacity 0 */
+            transform: translateY(20px); /* Start slightly below */
+        }
+
+        .float.active {
+            opacity: 1; /* Fade in */
+            transform: translateY(0); /* Move to original position */
+        }
     </style>
 </head>
 <body>
@@ -252,13 +314,28 @@
     function toggleMenu() {
         document.querySelector(".nav-links").classList.toggle("active");
     }
+
+    // Float animation on scroll
+    window.addEventListener('scroll', function() {
+        const elements = document.querySelectorAll('.float');
+        const scrollPosition = window.scrollY;
+
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top + scrollPosition;
+            if (scrollPosition > elementPosition - window.innerHeight + 100) {
+                element.classList.add('active');
+            } else {
+                element.classList.remove('active');
+            }
+        });
+    });
 </script>
 
 <div class="container">
-    <div class="logo-typing">CLAPBACK.AI</div>
+    <div class="logo-typing float">CLAPBACK.AI</div>
 
-    <label for="language">Language Selection</label>
-    <select id="language">
+    <label for="language" class="float">Language Selection</label>
+    <select id="language" class="float">
         <option>English</option>
         <option>Indonesian</option>
         <option>Malay</option>
@@ -268,8 +345,8 @@
         <option>Hindi</option>
     </select>
 
-    <label for="style">Communication Style</label>
-    <select id="style">
+    <label for="style" class="float">Communication Style</label>
+    <select id="style" class="float">
         <option>Therapist Mode</option>
         <option>CEO Mode</option>
         <option>Comedian Mode</option>
@@ -278,22 +355,29 @@
         <option>Shakespeare Mode</option>
     </select>
 
-    <label for="raw">Raw Message</label>
-    <textarea id="raw" rows="3" placeholder="You jerk, I never thought you would be like this. I want us to break up now!"></textarea>
+    <!-- Spice Level Slider -->
+    <div class="spice-level float">
+        <label for="spice">Spice Level</label>
+        <input type="range" id="spice" class="slider" min="1" max="5" value="3" step="1" oninput="updateSpiceValue(this.value)">
+        <div class="slider-value" id="spiceValue">Medium</div>
+    </div>
 
-    <label for="redFlags">Red Flags</label>
-    <textarea id="redFlags" rows="2" placeholder="don't offend his family, because he is sensitive to that"></textarea>
+    <label for="raw" class="float">Raw Message</label>
+    <textarea id="raw" rows="3" placeholder="You jerk, I never thought you would be like this. I want us to break up now!" class="float"></textarea>
 
-    <button class="start-button">Start</button>
+    <label for="redFlags" class="float">Red Flags</label>
+    <textarea id="redFlags" rows="2" placeholder="don't offend his family, because he is sensitive to that" class="float"></textarea>
+
+    <button class="start-button float">Start</button>
 
     <div class="columns">
         <div class="column">
-            <label>Transformed Message</label>
-            <div class="box" id="transformedMessage">"Your true colors have finally emerged from the shadows. How delightfully disappointing. Consider our association elegantly terminated, effective immediately. I bid you farewell with the same cold precision you've so masterfully demonstrated."</div>
+            <label class="float">Transformed Message</label>
+            <div class="box float" id="transformedMessage">"Your true colors have finally emerged from the shadows. How delightfully disappointing. Consider our association elegantly terminated, effective immediately. I bid you farewell with the same cold precision you've so masterfully demonstrated."</div>
         </div>
         <div class="column">
-            <label>Message Analysis</label>
-            <div class="box message-analysis">
+            <label class="float">Message Analysis</label>
+            <div class="box message-analysis float">
                 <p><strong>Analysis of the message:</strong> "You jerk, I never thought you would be like this. I want us to break up now!"</p>
 
                 <p><strong>Scoring Analysis:</strong></p>
@@ -355,14 +439,12 @@
     </div>
 </div>
 
-</body>
-</p>
-
-                
-            </div>
-        </div>
-    </div>
-</div>
+<script>
+    function updateSpiceValue(value) {
+        const spiceLevels = ["Mild", "Medium", "Hot", "Fiery", "Inferno"];
+        document.getElementById("spiceValue").innerText = spiceLevels[value - 1];
+    }
+</script>
 
 </body>
 </html>
